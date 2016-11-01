@@ -12672,355 +12672,400 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr6.h: 818: bool TMR6_HasOverflowOccured(void);
 [; ;mcc.h: 70: void SYSTEM_Initialize(void);
 [; ;mcc.h: 83: void OSCILLATOR_Initialize(void);
-"38 main.c
+"41 main.c
 [v _play `(v ~T0 @X0 1 ef1`uc ]
-"39
-{
-[; ;main.c: 38: void play(uint8_t sound)
-[; ;main.c: 39: {
-[e :U _play ]
-"38
-[v _sound `uc ~T0 @X0 1 r1 ]
-"39
-[f ]
-[; ;main.c: 40: PWM6_LoadDutyValue(125);
-"40
-[e ( _PWM6_LoadDutyValue (1 -> -> 125 `i `ui ]
-[; ;main.c: 41: T6PR = sound;
-"41
-[e = _T6PR _sound ]
-[; ;main.c: 42: _delay((unsigned long)((400)*(4000000/4000.0)));
 "42
-[e ( __delay (1 -> * -> -> 400 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 43: PWM6_LoadDutyValue(0);
+{
+[; ;main.c: 41: void play(uint8_t sound)
+[; ;main.c: 42: {
+[e :U _play ]
+"41
+[v _sound `uc ~T0 @X0 1 r1 ]
+"42
+[f ]
+[; ;main.c: 43: PWM6_LoadDutyValue(125);
 "43
-[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `ui ]
-[; ;main.c: 44: _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( _PWM6_LoadDutyValue (1 -> -> 125 `i `ui ]
+[; ;main.c: 44: T6PR = sound;
 "44
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 45: }
+[e = _T6PR _sound ]
+[; ;main.c: 45: _delay((unsigned long)((200*4)*(4000000/4000.0)));
 "45
+[e ( __delay (1 -> * -> * -> 200 `i -> 4 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 46: PWM6_LoadDutyValue(0);
+"46
+[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `ui ]
+[; ;main.c: 47: _delay((unsigned long)((10)*(4000000/4000.0)));
+"47
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 48: }
+"48
 [e :UE 1519 ]
 }
-"47
-[v _play_half `(v ~T0 @X0 1 ef1`uc ]
-"48
-{
-[; ;main.c: 47: void play_half(uint8_t sound)
-[; ;main.c: 48: {
-[e :U _play_half ]
-"47
-[v _sound `uc ~T0 @X0 1 r1 ]
-"48
-[f ]
-[; ;main.c: 49: PWM6_LoadDutyValue(125);
-"49
-[e ( _PWM6_LoadDutyValue (1 -> -> 125 `i `ui ]
-[; ;main.c: 50: T6PR = sound;
 "50
-[e = _T6PR _sound ]
-[; ;main.c: 51: _delay((unsigned long)((200)*(4000000/4000.0)));
+[v _play_half `(v ~T0 @X0 1 ef1`uc ]
 "51
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 52: PWM6_LoadDutyValue(0);
+{
+[; ;main.c: 50: void play_half(uint8_t sound)
+[; ;main.c: 51: {
+[e :U _play_half ]
+"50
+[v _sound `uc ~T0 @X0 1 r1 ]
+"51
+[f ]
+[; ;main.c: 52: PWM6_LoadDutyValue(125);
 "52
-[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `ui ]
-[; ;main.c: 53: _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( _PWM6_LoadDutyValue (1 -> -> 125 `i `ui ]
+[; ;main.c: 53: T6PR = sound;
 "53
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 54: }
+[e = _T6PR _sound ]
+[; ;main.c: 54: _delay((unsigned long)((200*2)*(4000000/4000.0)));
 "54
+[e ( __delay (1 -> * -> * -> 200 `i -> 2 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 55: PWM6_LoadDutyValue(0);
+"55
+[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `ui ]
+[; ;main.c: 56: _delay((unsigned long)((10)*(4000000/4000.0)));
+"56
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 57: }
+"57
 [e :UE 1520 ]
 }
-"56
-[v _play_quater `(v ~T0 @X0 1 ef1`uc ]
-"57
-{
-[; ;main.c: 56: void play_quater(uint8_t sound)
-[; ;main.c: 57: {
-[e :U _play_quater ]
-"56
-[v _sound `uc ~T0 @X0 1 r1 ]
-"57
-[f ]
-[; ;main.c: 58: PWM6_LoadDutyValue(125);
-"58
-[e ( _PWM6_LoadDutyValue (1 -> -> 125 `i `ui ]
-[; ;main.c: 59: T6PR = sound;
 "59
-[e = _T6PR _sound ]
-[; ;main.c: 60: _delay((unsigned long)((100)*(4000000/4000.0)));
+[v _play_quater `(v ~T0 @X0 1 ef1`uc ]
 "60
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 61: PWM6_LoadDutyValue(0);
+{
+[; ;main.c: 59: void play_quater(uint8_t sound)
+[; ;main.c: 60: {
+[e :U _play_quater ]
+"59
+[v _sound `uc ~T0 @X0 1 r1 ]
+"60
+[f ]
+[; ;main.c: 61: PWM6_LoadDutyValue(125);
 "61
-[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `ui ]
-[; ;main.c: 62: _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( _PWM6_LoadDutyValue (1 -> -> 125 `i `ui ]
+[; ;main.c: 62: T6PR = sound;
 "62
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 63: }
+[e = _T6PR _sound ]
+[; ;main.c: 63: _delay((unsigned long)((200)*(4000000/4000.0)));
 "63
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 64: PWM6_LoadDutyValue(0);
+"64
+[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `ui ]
+[; ;main.c: 65: _delay((unsigned long)((10)*(4000000/4000.0)));
+"65
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 66: }
+"66
 [e :UE 1521 ]
 }
-"65
+"68
 [v _pause_quater `(v ~T0 @X0 1 ef ]
-"66
+"69
 {
-[; ;main.c: 65: void pause_quater(void)
-[; ;main.c: 66: {
+[; ;main.c: 68: void pause_quater(void)
+[; ;main.c: 69: {
 [e :U _pause_quater ]
 [f ]
-[; ;main.c: 67: PWM6_LoadDutyValue(0);
-"67
-[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `ui ]
-[; ;main.c: 68: _delay((unsigned long)((100)*(4000000/4000.0)));
-"68
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 69: PWM6_LoadDutyValue(125);
-"69
-[e ( _PWM6_LoadDutyValue (1 -> -> 125 `i `ui ]
-[; ;main.c: 70: }
+[; ;main.c: 70: PWM6_LoadDutyValue(0);
 "70
+[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `ui ]
+[; ;main.c: 71: _delay((unsigned long)((200)*(4000000/4000.0)));
+"71
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 72: PWM6_LoadDutyValue(125);
+"72
+[e ( _PWM6_LoadDutyValue (1 -> -> 125 `i `ui ]
+[; ;main.c: 73: }
+"73
 [e :UE 1522 ]
 }
-"72
+"75
 [v _play2octave `(v ~T0 @X0 1 ef ]
-"73
+"76
 {
-[; ;main.c: 72: void play2octave(void)
-[; ;main.c: 73: {
+[; ;main.c: 75: void play2octave(void)
+[; ;main.c: 76: {
 [e :U _play2octave ]
 [f ]
-[; ;main.c: 74: T6PR = 119;
-"74
-[e = _T6PR -> -> 119 `i `uc ]
-[; ;main.c: 75: _delay((unsigned long)((500)*(4000000/4000.0)));
-"75
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 77: T6PR = 105;
+[; ;main.c: 77: T6PR = 119;
 "77
-[e = _T6PR -> -> 105 `i `uc ]
+[e = _T6PR -> -> 119 `i `uc ]
 [; ;main.c: 78: _delay((unsigned long)((500)*(4000000/4000.0)));
 "78
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 80: T6PR = 94;
+[; ;main.c: 80: T6PR = 105;
 "80
-[e = _T6PR -> -> 94 `i `uc ]
+[e = _T6PR -> -> 105 `i `uc ]
 [; ;main.c: 81: _delay((unsigned long)((500)*(4000000/4000.0)));
 "81
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 83: T6PR = 88;
+[; ;main.c: 83: T6PR = 94;
 "83
-[e = _T6PR -> -> 88 `i `uc ]
+[e = _T6PR -> -> 94 `i `uc ]
 [; ;main.c: 84: _delay((unsigned long)((500)*(4000000/4000.0)));
 "84
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 86: T6PR = 79;
+[; ;main.c: 86: T6PR = 88;
 "86
-[e = _T6PR -> -> 79 `i `uc ]
+[e = _T6PR -> -> 88 `i `uc ]
 [; ;main.c: 87: _delay((unsigned long)((500)*(4000000/4000.0)));
 "87
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 89: T6PR = 70;
+[; ;main.c: 89: T6PR = 79;
 "89
-[e = _T6PR -> -> 70 `i `uc ]
+[e = _T6PR -> -> 79 `i `uc ]
 [; ;main.c: 90: _delay((unsigned long)((500)*(4000000/4000.0)));
 "90
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 92: T6PR = 62;
+[; ;main.c: 92: T6PR = 70;
 "92
-[e = _T6PR -> -> 62 `i `uc ]
+[e = _T6PR -> -> 70 `i `uc ]
 [; ;main.c: 93: _delay((unsigned long)((500)*(4000000/4000.0)));
 "93
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 95: T6PR = 59;
+[; ;main.c: 95: T6PR = 62;
 "95
-[e = _T6PR -> -> 59 `i `uc ]
+[e = _T6PR -> -> 62 `i `uc ]
 [; ;main.c: 96: _delay((unsigned long)((500)*(4000000/4000.0)));
 "96
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 98: T6PR = 52;
+[; ;main.c: 98: T6PR = 59;
 "98
-[e = _T6PR -> -> 52 `i `uc ]
+[e = _T6PR -> -> 59 `i `uc ]
 [; ;main.c: 99: _delay((unsigned long)((500)*(4000000/4000.0)));
 "99
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 101: T6PR = 46;
+[; ;main.c: 101: T6PR = 52;
 "101
-[e = _T6PR -> -> 46 `i `uc ]
+[e = _T6PR -> -> 52 `i `uc ]
 [; ;main.c: 102: _delay((unsigned long)((500)*(4000000/4000.0)));
 "102
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 104: T6PR = 44;
+[; ;main.c: 104: T6PR = 46;
 "104
-[e = _T6PR -> -> 44 `i `uc ]
+[e = _T6PR -> -> 46 `i `uc ]
 [; ;main.c: 105: _delay((unsigned long)((500)*(4000000/4000.0)));
 "105
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 107: T6PR = 39;
+[; ;main.c: 107: T6PR = 44;
 "107
-[e = _T6PR -> -> 39 `i `uc ]
+[e = _T6PR -> -> 44 `i `uc ]
 [; ;main.c: 108: _delay((unsigned long)((500)*(4000000/4000.0)));
 "108
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 110: T6PR = 35;
+[; ;main.c: 110: T6PR = 39;
 "110
-[e = _T6PR -> -> 35 `i `uc ]
+[e = _T6PR -> -> 39 `i `uc ]
 [; ;main.c: 111: _delay((unsigned long)((500)*(4000000/4000.0)));
 "111
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-[; ;main.c: 115: }
-"115
+[; ;main.c: 113: T6PR = 35;
+"113
+[e = _T6PR -> -> 35 `i `uc ]
+[; ;main.c: 114: _delay((unsigned long)((500)*(4000000/4000.0)));
+"114
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;main.c: 118: }
+"118
 [e :UE 1523 ]
 }
-"117
+"120
 [v _playSWcantina `(v ~T0 @X0 1 ef ]
-"118
+"121
 {
-[; ;main.c: 117: void playSWcantina(void)
-[; ;main.c: 118: {
+[; ;main.c: 120: void playSWcantina(void)
+[; ;main.c: 121: {
 [e :U _playSWcantina ]
 [f ]
-[; ;main.c: 119: play_half(70);
-"119
-[e ( _play_half (1 -> -> 70 `i `uc ]
-[; ;main.c: 120: play_half(52);
-"120
-[e ( _play_half (1 -> -> 52 `i `uc ]
-[; ;main.c: 121: play_half(70);
-"121
-[e ( _play_half (1 -> -> 70 `i `uc ]
-[; ;main.c: 122: play_half(52);
+[; ;main.c: 122: play_half(70);
 "122
-[e ( _play_half (1 -> -> 52 `i `uc ]
-[; ;main.c: 123: play_quater(70);
-"123
-[e ( _play_quater (1 -> -> 70 `i `uc ]
-[; ;main.c: 124: play_half(52);
-"124
-[e ( _play_half (1 -> -> 52 `i `uc ]
-[; ;main.c: 125: play_quater(70);
-"125
-[e ( _play_quater (1 -> -> 70 `i `uc ]
-[; ;main.c: 126: pause_quater();
-"126
-[e ( _pause_quater ..  ]
-[; ;main.c: 127: play_quater(79);
-"127
-[e ( _play_quater (1 -> -> 79 `i `uc ]
-[; ;main.c: 128: play_half(70);
-"128
 [e ( _play_half (1 -> -> 70 `i `uc ]
-[; ;main.c: 129: play_quater(70);
-"129
+[; ;main.c: 123: play_half(52);
+"123
+[e ( _play_half (1 -> -> 52 `i `uc ]
+[; ;main.c: 124: play_half(70);
+"124
+[e ( _play_half (1 -> -> 70 `i `uc ]
+[; ;main.c: 125: play_half(52);
+"125
+[e ( _play_half (1 -> -> 52 `i `uc ]
+[; ;main.c: 126: play_quater(70);
+"126
 [e ( _play_quater (1 -> -> 70 `i `uc ]
+[; ;main.c: 127: play_half(52);
+"127
+[e ( _play_half (1 -> -> 52 `i `uc ]
+[; ;main.c: 128: play_quater(70);
+"128
+[e ( _play_quater (1 -> -> 70 `i `uc ]
+[; ;main.c: 129: pause_quater();
+"129
+[e ( _pause_quater ..  ]
 [; ;main.c: 130: play_quater(79);
 "130
 [e ( _play_quater (1 -> -> 79 `i `uc ]
-[; ;main.c: 131: play_quater(70);
+[; ;main.c: 131: play_half(70);
 "131
-[e ( _play_quater (1 -> -> 70 `i `uc ]
-[; ;main.c: 132: play_quater(79);
+[e ( _play_half (1 -> -> 70 `i `uc ]
+[; ;main.c: 132: play_quater(70);
 "132
-[e ( _play_quater (1 -> -> 79 `i `uc ]
-[; ;main.c: 133: play_quater(88);
+[e ( _play_quater (1 -> -> 70 `i `uc ]
+[; ;main.c: 133: play_quater(79);
 "133
-[e ( _play_quater (1 -> -> 88 `i `uc ]
-[; ;main.c: 134: play_quater(79);
-"134
 [e ( _play_quater (1 -> -> 79 `i `uc ]
+[; ;main.c: 134: play_quater(70);
+"134
+[e ( _play_quater (1 -> -> 70 `i `uc ]
 [; ;main.c: 135: play_quater(79);
 "135
 [e ( _play_quater (1 -> -> 79 `i `uc ]
 [; ;main.c: 136: play_quater(88);
 "136
 [e ( _play_quater (1 -> -> 88 `i `uc ]
-[; ;main.c: 137: }
+[; ;main.c: 137: play_quater(79);
 "137
+[e ( _play_quater (1 -> -> 79 `i `uc ]
+[; ;main.c: 138: play_quater(79);
+"138
+[e ( _play_quater (1 -> -> 79 `i `uc ]
+[; ;main.c: 139: play_quater(88);
+"139
+[e ( _play_quater (1 -> -> 88 `i `uc ]
+[; ;main.c: 140: }
+"140
 [e :UE 1524 ]
 }
-"139
+"142
 [v _playMario `(v ~T0 @X0 1 ef ]
-"140
+"143
 {
-[; ;main.c: 139: void playMario(void)
-[; ;main.c: 140: {
+[; ;main.c: 142: void playMario(void)
+[; ;main.c: 143: {
 [e :U _playMario ]
 [f ]
-[; ;main.c: 141: play(52);
-"141
-[e ( _play (1 -> -> 52 `i `uc ]
-[; ;main.c: 142: play_quater(52);
-"142
-[e ( _play_quater (1 -> -> 52 `i `uc ]
-[; ;main.c: 143: play_quater(59);
-"143
-[e ( _play_quater (1 -> -> 59 `i `uc ]
-[; ;main.c: 144: play_quater(44);
+[; ;main.c: 144: play_quater(46);
 "144
-[e ( _play_quater (1 -> -> 44 `i `uc ]
-[; ;main.c: 145: play_quater(52);
+[e ( _play_quater (1 -> -> 46 `i `uc ]
+[; ;main.c: 145: play_half(46);
 "145
-[e ( _play_quater (1 -> -> 52 `i `uc ]
-[; ;main.c: 146: play(88);
+[e ( _play_half (1 -> -> 46 `i `uc ]
+[; ;main.c: 146: play_half(46);
 "146
-[e ( _play (1 -> -> 88 `i `uc ]
-[; ;main.c: 147: play_quater(88);
+[e ( _play_half (1 -> -> 46 `i `uc ]
+[; ;main.c: 147: play_quater(59);
 "147
-[e ( _play_quater (1 -> -> 88 `i `uc ]
-[; ;main.c: 148: play_quater(105);
+[e ( _play_quater (1 -> -> 59 `i `uc ]
+[; ;main.c: 148: play_half(46);
 "148
-[e ( _play_quater (1 -> -> 105 `i `uc ]
-[; ;main.c: 149: play_quater(94);
-"149
-[e ( _play_quater (1 -> -> 94 `i `uc ]
-[; ;main.c: 150: play_quater(88);
+[e ( _play_half (1 -> -> 46 `i `uc ]
+[; ;main.c: 150: play_half(39);
 "150
-[e ( _play_quater (1 -> -> 88 `i `uc ]
-[; ;main.c: 151: }
+[e ( _play_half (1 -> -> 39 `i `uc ]
+[; ;main.c: 151: pause_quater();
 "151
+[e ( _pause_quater ..  ]
+[; ;main.c: 152: play_quater(79);
+"152
+[e ( _play_quater (1 -> -> 79 `i `uc ]
+[; ;main.c: 153: play_quater(59);
+"153
+[e ( _play_quater (1 -> -> 59 `i `uc ]
+[; ;main.c: 154: play_quater(79);
+"154
+[e ( _play_quater (1 -> -> 79 `i `uc ]
+[; ;main.c: 155: play_half(94);
+"155
+[e ( _play_half (1 -> -> 94 `i `uc ]
+[; ;main.c: 157: play_half(70);
+"157
+[e ( _play_half (1 -> -> 70 `i `uc ]
+[; ;main.c: 158: play_quater(62);
+"158
+[e ( _play_quater (1 -> -> 62 `i `uc ]
+[; ;main.c: 159: play_quater(66);
+"159
+[e ( _play_quater (1 -> -> 66 `i `uc ]
+[; ;main.c: 160: play_half(70);
+"160
+[e ( _play_half (1 -> -> 70 `i `uc ]
+[; ;main.c: 161: play_quater(79);
+"161
+[e ( _play_quater (1 -> -> 79 `i `uc ]
+[; ;main.c: 162: play_half(46);
+"162
+[e ( _play_half (1 -> -> 46 `i `uc ]
+[; ;main.c: 163: play_quater(39);
+"163
+[e ( _play_quater (1 -> -> 39 `i `uc ]
+[; ;main.c: 164: play_half(35);
+"164
+[e ( _play_half (1 -> -> 35 `i `uc ]
+[; ;main.c: 165: play_quater(44);
+"165
+[e ( _play_quater (1 -> -> 44 `i `uc ]
+[; ;main.c: 166: play_half(39);
+"166
+[e ( _play_half (1 -> -> 39 `i `uc ]
+[; ;main.c: 167: play_half(46);
+"167
+[e ( _play_half (1 -> -> 46 `i `uc ]
+[; ;main.c: 168: play_quater(59);
+"168
+[e ( _play_quater (1 -> -> 59 `i `uc ]
+[; ;main.c: 169: play_quater(52);
+"169
+[e ( _play_quater (1 -> -> 52 `i `uc ]
+[; ;main.c: 170: play_quater(62);
+"170
+[e ( _play_quater (1 -> -> 62 `i `uc ]
+[; ;main.c: 173: }
+"173
 [e :UE 1525 ]
 }
-"153
+"175
 [v _main `(v ~T0 @X0 1 ef ]
-"154
+"176
 {
-[; ;main.c: 153: void main(void)
-[; ;main.c: 154: {
+[; ;main.c: 175: void main(void)
+[; ;main.c: 176: {
 [e :U _main ]
 [f ]
-[; ;main.c: 156: SYSTEM_Initialize();
-"156
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 162: (INTCONbits.GIE = 1);
-"162
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 165: (INTCONbits.PEIE = 1);
-"165
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"175
-[v _flag `uc ~T0 @X0 0 e ]
-[; ;main.c: 175: extern bool flag;
-[; ;main.c: 177: while (1)
-"177
-[e :U 1528 ]
-[; ;main.c: 178: {
+[; ;main.c: 178: SYSTEM_Initialize();
 "178
-{
-[; ;main.c: 181: playMario();
-"181
-[e ( _playMario ..  ]
-[; ;main.c: 183: _delay((unsigned long)((1000)*(4000000/4000.0)));
-"183
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 184: (INTCONbits.GIE = 1);
 "184
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 187: (INTCONbits.PEIE = 1);
+"187
+[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
+"197
+[v _flag `uc ~T0 @X0 0 e ]
+[; ;main.c: 197: extern bool flag;
+[; ;main.c: 199: while (1)
+"199
+[e :U 1528 ]
+[; ;main.c: 200: {
+"200
+{
+[; ;main.c: 203: playMario();
+"203
+[e ( _playMario ..  ]
+[; ;main.c: 205: _delay((unsigned long)((1000)*(4000000/4000.0)));
+"205
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"206
 }
 [e :U 1527 ]
-"177
+"199
 [e $U 1528  ]
 [e :U 1529 ]
-[; ;main.c: 184: }
-[; ;main.c: 185: }
-"185
+[; ;main.c: 206: }
+[; ;main.c: 207: }
+"207
 [e :UE 1526 ]
 }

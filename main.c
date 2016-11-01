@@ -26,6 +26,7 @@
 #define F4 88
 #define G4 79
 #define A4 70
+#define A4hash 66
 #define H4 62
 #define C5 59
 #define D5 52
@@ -35,11 +36,13 @@
 #define A5 35
 #define H5 31
 
+#define quater 200
+
 void play(uint8_t sound)
 {
     PWM6_LoadDutyValue(125);
     T6PR = sound;
-    __delay_ms(400);
+    __delay_ms(quater*4);
     PWM6_LoadDutyValue(0);
     __delay_ms(10);
 }
@@ -48,7 +51,7 @@ void play_half(uint8_t sound)
 {
     PWM6_LoadDutyValue(125);
     T6PR = sound;
-    __delay_ms(200);
+    __delay_ms(quater*2);
     PWM6_LoadDutyValue(0);
     __delay_ms(10);
 }
@@ -57,7 +60,7 @@ void play_quater(uint8_t sound)
 {
     PWM6_LoadDutyValue(125);
     T6PR = sound;
-    __delay_ms(100);
+    __delay_ms(quater);
     PWM6_LoadDutyValue(0);
     __delay_ms(10);
 }
@@ -65,7 +68,7 @@ void play_quater(uint8_t sound)
 void pause_quater(void)
 {
     PWM6_LoadDutyValue(0);
-    __delay_ms(100);
+    __delay_ms(quater);
     PWM6_LoadDutyValue(125);
 }
 
@@ -138,16 +141,35 @@ void playSWcantina(void) //chujowo co?, próbowa?em ze s?uchu potem z nut xD
 
 void playMario(void)
 {
-    play(D5);
-    play_quater(D5);
+    play_quater(E5);
+    play_half(E5);
+    play_half(E5);
     play_quater(C5);
+    play_half(E5);
+    
+    play_half(G5);
+    pause_quater();
+    play_quater(G4);
+    play_quater(C5);
+    play_quater(G4);
+    play_half(E4);
+    
+    play_half(A4);
+    play_quater(H4);
+    play_quater(A4hash);
+    play_half(A4);
+    play_quater(G4);
+    play_half(E5);
+    play_quater(G5);
+    play_half(A5);
     play_quater(F5);
+    play_half(G5);
+    play_half(E5);
+    play_quater(C5);
     play_quater(D5);
-    play(F4);
-    play_quater(F4);
-    play_quater(D4);
-    play_quater(E4);
-    play_quater(F4);
+    play_quater(H4);    
+    //pause_quater();
+    
 }
 
 void main(void)

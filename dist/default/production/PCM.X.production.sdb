@@ -56,17 +56,15 @@ TMR6_LC4_OUT 17
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"38 C:\Users\Radek\MPLABXProjects\PCM.X\main.c
-[v _play play `(v  1 e 1 0 ]
-"47
+"50 C:\Users\Radek\MPLABXProjects\PCM.X\main.c
 [v _play_half play_half `(v  1 e 1 0 ]
-"56
+"59
 [v _play_quater play_quater `(v  1 e 1 0 ]
-"65
+"68
 [v _pause_quater pause_quater `(v  1 e 1 0 ]
-"139
+"142
 [v _playMario playMario `(v  1 e 1 0 ]
-"153
+"175
 [v _main main `(v  1 e 1 0 ]
 "51 C:\Users\Radek\MPLABXProjects\PCM.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
@@ -339,33 +337,38 @@ TMR6_LC4_OUT 17
 [v _flag flag `uc  1 e 1 0 ]
 "350 C:\Users\Radek\MPLABXProjects\PCM.X\mcc_generated_files/tmr0.h
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"153 C:\Users\Radek\MPLABXProjects\PCM.X\main.c
+"175 C:\Users\Radek\MPLABXProjects\PCM.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"185
+"207
 } 0
-"139
+"142
 [v _playMario playMario `(v  1 e 1 0 ]
 {
-"151
+"173
 } 0
-"56
+"59
 [v _play_quater play_quater `(v  1 e 1 0 ]
 {
 [v play_quater@sound sound `uc  1 a 1 wreg ]
 [v play_quater@sound sound `uc  1 a 1 wreg ]
-"58
-[v play_quater@sound sound `uc  1 a 1 7 ]
-"63
+"61
+[v play_quater@sound sound `uc  1 a 1 8 ]
+"66
 } 0
-"38
-[v _play play `(v  1 e 1 0 ]
+"50
+[v _play_half play_half `(v  1 e 1 0 ]
 {
-[v play@sound sound `uc  1 a 1 wreg ]
-[v play@sound sound `uc  1 a 1 wreg ]
-"40
-[v play@sound sound `uc  1 a 1 8 ]
-"45
+[v play_half@sound sound `uc  1 a 1 wreg ]
+[v play_half@sound sound `uc  1 a 1 wreg ]
+"52
+[v play_half@sound sound `uc  1 a 1 8 ]
+"57
+} 0
+"68
+[v _pause_quater pause_quater `(v  1 e 1 0 ]
+{
+"73
 } 0
 "74 C:\Users\Radek\MPLABXProjects\PCM.X\mcc_generated_files/pwm6.c
 [v _PWM6_LoadDutyValue PWM6_LoadDutyValue `(v  1 e 1 0 ]
